@@ -1,0 +1,246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6931,        238]
+NotebookOptionsPosition[      6134,        217]
+NotebookOutlinePosition[      6570,        234]
+CellTagsIndexPosition[      6527,        231]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.860570024308051*^9, 
+  3.86057004951505*^9}},ExpressionUUID->"90f8eab8-132f-4cd1-ad30-\
+cfef17c168e3"],
+
+Cell[TextData[StyleBox["GAUSS JORDAN METHOD",
+ FontSize->48,
+ FontWeight->Bold,
+ FontVariations->{"Underline"->True},
+ FontColor->RGBColor[0.6, 0.4, 0.2]]], "Text",
+ CellChangeTimes->{{3.8605700582775645`*^9, 3.8605700641637373`*^9}, {
+   3.8605701787250733`*^9, 3.860570180956628*^9}, 3.8605702663464813`*^9, 
+   3.860570529023212*^9},ExpressionUUID->"c8a690e3-01c5-42d3-876e-\
+883ec0de7060"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    StyleBox["Question",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["4.",
+     FontWeight->Bold], 
+    StyleBox["  ",
+     FontWeight->Bold], 
+    StyleBox["Solve",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["the",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["system",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["of",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["equations",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["by",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["Gaussian",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    StyleBox["elimination",
+     FontWeight->Bold], 
+    StyleBox[" ",
+     FontWeight->Bold], 
+    RowBox[{
+     StyleBox["method",
+      FontWeight->Bold], 
+     StyleBox[" ",
+      FontWeight->Bold], 
+     StyleBox[":",
+      FontWeight->Bold], "\n", 
+     StyleBox["\t\t\t",
+      FontWeight->Bold], "\n", 
+     StyleBox[
+      "\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\[NonBreakingSpace]\
+\[NonBreakingSpace]           ",
+      FontWeight->Bold], 
+     StyleBox[
+      RowBox[{
+       RowBox[{"1", "x1"}], " ", "+", " ", 
+       RowBox[{"2", " ", "x2"}], " ", "+", " ", 
+       RowBox[{"2", "x3"}]}],
+      FontWeight->Bold]}]}], 
+   StyleBox[" ",
+    FontWeight->Bold], 
+   StyleBox["=",
+    FontWeight->Bold], 
+   StyleBox[" ",
+    FontWeight->Bold], 
+   StyleBox[
+    RowBox[{"-", "2"}],
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 0.0784313725490196]], "\n", 
+ StyleBox[
+  RowBox[{
+   StyleBox["\t\t",
+    FontWeight->Bold], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"6", "x1"}], " ", "+", " ", 
+      RowBox[{"7", "x2"}], " ", "+", " ", 
+      RowBox[{"5", "x3"}]}], " ", "=", " ", "1"}],
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 
+    0.0784313725490196]], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   StyleBox["\t             ",
+    FontWeight->Bold], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"2", "x1"}], " ", "+", " ", 
+      RowBox[{"6", "x2"}], " ", "+", " ", 
+      RowBox[{"2", "x3"}]}], " ", "=", " ", "7"}],
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 0.0784313725490196]]}], "Input",
+ CellChangeTimes->{
+  3.8605700952595224`*^9, 3.86057019349673*^9, 3.8605702798375287`*^9, {
+   3.8605705355116415`*^9, 
+   3.8605705530692515`*^9}},ExpressionUUID->"e2123e66-406f-409a-a2e9-\
+a2a4ea7cbe79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", " ", "6", ",", " ", "2"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", "7", ",", " ", "6"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", "5", ",", " ", "2"}], "}"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b1", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", " ", "1", ",", " ", "7"}], "}"}]}], ";"}], 
+  " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"aug", " ", "=", " ", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"Append", "[", 
+      RowBox[{
+       RowBox[{"Transpose", "[", "A1", "]"}], ",", " ", "b1"}], "]"}], 
+     "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{"MATRIX", " ", "=", " ", 
+   RowBox[{"RowReduce", "[", "aug", "]"}]}], ";"}], "\n", 
+ RowBox[{"sol", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Take", "[", 
+    RowBox[{"MATRIX", ",", " ", "3", ",", " ", 
+     RowBox[{"{", "4", "}"}]}], "]"}], " ", "//", " ", 
+   "MatrixForm"}]}]}], "Input",
+ CellChangeTimes->{3.8605702087350297`*^9, 3.8605702936558485`*^9, 
+  3.8605705639339323`*^9},
+ CellLabel->"In[30]:=",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["23", "3"]},
+     {
+      RowBox[{"-", 
+       FractionBox["4", "3"]}]},
+     {
+      RowBox[{"-", 
+       FractionBox["5", "6"]}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.860570565579613*^9},
+ CellLabel->
+  "Out[34]//MatrixForm=",ExpressionUUID->"d19cdac2-c6fa-4043-ad31-\
+21947faae85d"]
+}, Open  ]]
+},
+WindowSize->{798, 805},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+TaggingRules->{"TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fb455544-a8b5-4ca3-a2e6-3e1a998dc51a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 151, 3, 28, "Input",ExpressionUUID->"90f8eab8-132f-4cd1-ad30-cfef17c168e3"],
+Cell[712, 25, 393, 8, 75, "Text",ExpressionUUID->"c8a690e3-01c5-42d3-876e-883ec0de7060"],
+Cell[1108, 35, 2974, 110, 215, "Input",ExpressionUUID->"e2123e66-406f-409a-a2e9-a2a4ea7cbe79"],
+Cell[CellGroupData[{
+Cell[4107, 149, 1264, 38, 105, "Input",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+Cell[5374, 189, 744, 25, 106, "Output",ExpressionUUID->"d19cdac2-c6fa-4043-ad31-21947faae85d"]
+}, Open  ]]
+}
+]
+*)
+

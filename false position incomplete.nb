@@ -1,0 +1,235 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7555,        225]
+NotebookOptionsPosition[      6671,        202]
+NotebookOutlinePosition[      7069,        218]
+CellTagsIndexPosition[      7026,        215]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{"METHOD", " ", "OF", " ", "FALSE", " ", 
+   RowBox[{"POSITION", ":", 
+    RowBox[{"TAKING", " ", "PARAMETERS", " ", "AS", " ", "INPUTS"}]}]}], 
+  "Subsection"], "\n", 
+ RowBox[{
+  RowBox[{"x0", "=", 
+   RowBox[{"Input", "[", "\"\<Enter first guess : \>\"", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"x1", "=", 
+   RowBox[{"Input", "[", "\"\<Enter second guess : \>\"", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Nmax", "=", 
+   RowBox[{
+   "Input", "[", "\"\<Enter maximum number of iterations : \>\"", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"eps", "=", 
+   RowBox[{
+   "Input", "[", "\"\<Enter a value of convergence parameter : \>\"", "]"}]}],
+   ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<x0=\>\"", ",", "x0"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<x1=\>\"", ",", "x1"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Nmax=\>\"", ",", "Nmax"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<epsilon=\>\"", ",", "eps"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ":=", 
+   RowBox[{"Cos", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<f(x) := \>\"", ",", 
+    RowBox[{"f", "[", "x", "]"}]}], "]"}], ";", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "x0", "]"}], "*", 
+       RowBox[{"f", "[", "x1", "]"}]}], "]"}], ">", "0"}], ",", 
+    RowBox[{
+    "Print", "[", 
+     "\"\<These values do not satisfy the IVP so change the values.\>\"", 
+     "]"}], ",", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"=", "1"}], ",", 
+       RowBox[{"i", "\[LessEqual]", "Nmax"}], ",", 
+       RowBox[{"i", "++"}], ",", 
+       RowBox[{
+        RowBox[{"a", "=", 
+         RowBox[{"N", "[", 
+          RowBox[{
+           RowBox[{"x1", "-", 
+            RowBox[{
+             RowBox[{"f", "[", "x1", "]"}], "*", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"x1", "-", "x0"}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"f", "[", "x1", "]"}], "-", 
+                RowBox[{"f", "[", "x0", "]"}]}], ")"}]}]}]}], ",", "16"}], 
+          "]"}]}], ";", "\n", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Abs", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"x1", "-", "x0"}], ")"}], "/", "2"}], "]"}], "<", 
+           "eps"}], ",", 
+          RowBox[{"Return", "[", 
+           RowBox[{"N", "[", 
+            RowBox[{"a", ",", "16"}], "]"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"Print", "[", 
+            RowBox[{"i", ",", "\"\<th iteration value is : \>\"", ",", 
+             RowBox[{"N", "[", 
+              RowBox[{"a", ",", "16"}], "]"}]}], "]"}], ";", 
+           RowBox[{"Print", "[", 
+            RowBox[{"\"\< Estimated error is : \>\"", ",", 
+             RowBox[{"N", "[", 
+              RowBox[{
+               RowBox[{"x1", "-", "x0"}], ",", "16"}], "]"}]}], "]"}], ";", 
+           "\n", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"f", "[", "a", "]"}], "*", 
+               RowBox[{"f", "[", "x1", "]"}]}], ">", "0"}], ",", 
+             RowBox[{"x1", "=", "a"}], ",", 
+             RowBox[{"x0", "=", "a"}]}], "]"}]}]}], "]"}]}]}], "]"}], ";", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\< Root is : \>\"", ",", 
+       RowBox[{"N", "[", 
+        RowBox[{"a", ",", "16"}], "]"}]}], "]"}], ";", "\n", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\< Estimated error is : \>\"", ",", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"x1", "-", "x0"}], ",", "16"}], "]"}]}], "]"}]}]}], "]"}], 
+  ";", 
+  RowBox[{"Plot", "[", 
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "1"}], ",", "3"}], "}"}]}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8605718119504304`*^9, 3.8605718119504304`*^9}, {
+  3.8605719898336926`*^9, 3.8605722407633905`*^9}, {3.8605722756295853`*^9, 
+  3.8605723678160686`*^9}, {3.8605724067612915`*^9, 3.8605724596059904`*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->"In[21]:=",ExpressionUUID->"1ebef170-ad6f-4751-9b46-8533e5f646ed"],
+
+Cell[BoxData[
+ RowBox[{"FALSE", " ", "METHOD", " ", "OF", " ", 
+  RowBox[{"(", 
+   RowBox[{"POSITION", ":", 
+    RowBox[{"AS", " ", "INPUTS", " ", "PARAMETERS", " ", "TAKING"}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{3.8605718283388653`*^9, 3.860572369003979*^9, 
+  3.860572489487619*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"bf3959d4-1eef-43fe-ae26-a7ce3a2098ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x0=\"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["x0=", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8605723843193917`*^9, 3.860572497864567*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"99a24c5a-728a-4166-a790-aa079ad42672"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x1=\"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["x1=", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8605723843193917`*^9, 3.8605724978801994`*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"2aab6760-8cda-4303-9e80-eeb16088059e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Nmax=\"\>", "\[InvisibleSpace]", "10"}],
+  SequenceForm["Nmax=", 10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8605723843193917`*^9, 3.8605724978801994`*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"b91fc364-b350-4b5e-86c5-641b7c2d1168"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"epsilon=\"\>", "\[InvisibleSpace]", "0.0001`"}],
+  SequenceForm["epsilon=", 0.0001],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8605723843193917`*^9, 3.8605724978801994`*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"520bf03b-f1ae-4da8-bf9a-e82e2bc482de"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{759, 707},
+WindowMargins->{{Automatic, 106}, {11, Automatic}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"641cdd30-1075-4a04-8d35-3be48aa27fc9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4368, 124, 335, "Input",ExpressionUUID->"1ebef170-ad6f-4751-9b46-8533e5f646ed"],
+Cell[4951, 148, 373, 8, 32, "Output",ExpressionUUID->"bf3959d4-1eef-43fe-ae26-a7ce3a2098ad"],
+Cell[CellGroupData[{
+Cell[5349, 160, 313, 8, 22, "Print",ExpressionUUID->"99a24c5a-728a-4166-a790-aa079ad42672"],
+Cell[5665, 170, 315, 8, 22, "Print",ExpressionUUID->"2aab6760-8cda-4303-9e80-eeb16088059e"],
+Cell[5983, 180, 321, 8, 22, "Print",ExpressionUUID->"b91fc364-b350-4b5e-86c5-641b7c2d1168"],
+Cell[6307, 190, 336, 8, 22, "Print",ExpressionUUID->"520bf03b-f1ae-4da8-bf9a-e82e2bc482de"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

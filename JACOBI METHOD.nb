@@ -1,0 +1,322 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9151,        314]
+NotebookOptionsPosition[      8138,        289]
+NotebookOutlinePosition[      8574,        306]
+CellTagsIndexPosition[      8531,        303]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.860570024308051*^9, 
+  3.86057004951505*^9}},ExpressionUUID->"90f8eab8-132f-4cd1-ad30-\
+cfef17c168e3"],
+
+Cell[TextData[StyleBox["JACOBI METHOD",
+ FontSize->48,
+ FontWeight->Bold,
+ FontVariations->{"Underline"->True},
+ FontColor->RGBColor[0.6, 0.4, 0.2]]], "Text",
+ CellChangeTimes->{{3.8605700582775645`*^9, 3.8605700641637373`*^9}, {
+   3.8605701787250733`*^9, 3.860570180956628*^9}, 3.8605702663464813`*^9, 
+   3.860570529023212*^9, 
+   3.860570683698711*^9},ExpressionUUID->"c8a690e3-01c5-42d3-876e-\
+883ec0de7060"],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     StyleBox["Question", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["5.", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["Solve", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["the", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["system", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["of", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["equations", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["by", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox["Jacobi", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[" ", "Text",
+      FontSize->24,
+      FontWeight->Bold], 
+     StyleBox[
+      RowBox[{
+       StyleBox["method",
+        FontSize->24,
+        FontWeight->Bold], 
+       StyleBox[" ",
+        FontSize->24,
+        FontWeight->Bold], 
+       StyleBox[":",
+        FontSize->24,
+        FontWeight->Bold], 
+       StyleBox[" ",
+        FontSize->24,
+        FontWeight->Bold], "\n", "\n", 
+       StyleBox[" ",
+        FontSize->24,
+        FontWeight->Bold], 
+       StyleBox[
+        RowBox[{
+         RowBox[{"1", "x1"}], " ", "+", " ", 
+         RowBox[{"7", " ", "x2"}], " ", "+", " ", 
+         RowBox[{"1", "x3"}]}],
+        FontSize->24,
+        FontWeight->Bold]}], "Text"]}], 
+    StyleBox[" ", "Text",
+     FontSize->24,
+     FontWeight->Bold], 
+    StyleBox["=", "Text",
+     FontSize->24,
+     FontWeight->Bold], 
+    StyleBox[" ", "Text",
+     FontSize->24,
+     FontWeight->Bold], 
+    StyleBox["1", "Text",
+     FontSize->24,
+     FontWeight->Bold]}], 
+   StyleBox[" ", "Text",
+    FontSize->24,
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 
+    0.0784313725490196]], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   StyleBox[" ", "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"1", "x1"}], " ", "+", " ", 
+      RowBox[{"2", " ", "x2"}], " ", "+", " ", 
+      RowBox[{"1", "x3"}]}], " ", "=", " ", "2"}], "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox[" ", "Text",
+    FontSize->24,
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 
+    0.0784313725490196]], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"1", "x1"}], " ", "+", " ", 
+     RowBox[{"4", "x2"}], " ", "+", " ", 
+     RowBox[{"1", "x3"}]}], "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox[" ", "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox["=", "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox[" ", "Text",
+    FontSize->24,
+    FontWeight->Bold], 
+   StyleBox["3", "Text",
+    FontSize->24,
+    FontWeight->Bold]}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 0.0784313725490196]]}], "Input",
+ CellChangeTimes->{
+  3.8605700952595224`*^9, 3.86057019349673*^9, 3.8605702798375287`*^9, {
+   3.8605705355116415`*^9, 3.8605705530692515`*^9}, 
+   3.8605706895777035`*^9},ExpressionUUID->"e2123e66-406f-409a-a2e9-\
+a2a4ea7cbe79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xold", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", " ", "0", ",", " ", "0"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"A", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", " ", "7", ",", " ", "1"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", " ", "2", ",", " ", "1"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", " ", "4", ",", " ", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", " ", "2", ",", " ", "3"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"d", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", " ", "0", ",", " ", "0"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", "2", ",", " ", "0"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", "0", ",", " ", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"L", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"LowerTriangularize", "[", "A", "]"}], " ", "-", " ", "d"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"U", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"UpperTriangularize", "[", "A", "]"}], " ", "-", " ", "d"}]}], 
+   ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"di", " ", "=", " ", 
+    RowBox[{"Inverse", "[", "d", "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{"K", " ", "=", " ", 
+   RowBox[{"-", 
+    RowBox[{"(", 
+     RowBox[{"L", " ", "+", " ", "U"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", " ", "=", " ", "0"}], ",", " ", 
+   RowBox[{"i", " ", "\[LessEqual]", " ", "2"}], ",", " ", 
+   RowBox[{
+    RowBox[{"i", "++"}], ";", " ", "\n", 
+    RowBox[{"xnew", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"di", ".", "K", ".", "xold"}], " ", "+", " ", 
+      RowBox[{"di", ".", "b"}]}]}], ";", " ", "\n", 
+    RowBox[{"xold", " ", "=", " ", "xnew"}], ";", " ", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"N", "[", "xnew", "]"}], "]"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{3.8605702087350297`*^9, 3.8605702936558485`*^9, 
+  3.8605705639339323`*^9, 3.860570701691372*^9},
+ CellLabel->"In[42]:=",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.`", ",", "1.`", ",", "3.`"}], "}"}]], "Print",
+ CellChangeTimes->{3.8605707027742767`*^9},
+ CellLabel->
+  "During evaluation of \
+In[42]:=",ExpressionUUID->"f954cc43-ae1f-4bae-a675-6c75e3e088da"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "9.`"}], ",", 
+   RowBox[{"-", "1.`"}], ",", 
+   RowBox[{"-", "2.`"}]}], "}"}]], "Print",
+ CellChangeTimes->{3.8605707028027244`*^9},
+ CellLabel->
+  "During evaluation of \
+In[42]:=",ExpressionUUID->"1edfeb04-08d4-4a7b-ad3c-c9a690ff2684"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"10.`", ",", "6.5`", ",", "16.`"}], "}"}]], "Print",
+ CellChangeTimes->{3.860570702812717*^9},
+ CellLabel->
+  "During evaluation of \
+In[42]:=",ExpressionUUID->"510ca4ff-389f-42b0-bb94-3b3782ec1815"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{798, 805},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+TaggingRules->{"TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"96f77f6d-d8f7-49f8-95aa-2197663d2299"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 151, 3, 28, "Input",ExpressionUUID->"90f8eab8-132f-4cd1-ad30-cfef17c168e3"],
+Cell[712, 25, 413, 9, 75, "Text",ExpressionUUID->"c8a690e3-01c5-42d3-876e-883ec0de7060"],
+Cell[1128, 36, 3894, 150, 181, "Input",ExpressionUUID->"e2123e66-406f-409a-a2e9-a2a4ea7cbe79"],
+Cell[CellGroupData[{
+Cell[5047, 190, 2263, 66, 238, "Input",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+Cell[CellGroupData[{
+Cell[7335, 260, 237, 6, 22, "Print",ExpressionUUID->"f954cc43-ae1f-4bae-a675-6c75e3e088da"],
+Cell[7575, 268, 294, 9, 22, "Print",ExpressionUUID->"1edfeb04-08d4-4a7b-ad3c-c9a690ff2684"],
+Cell[7872, 279, 238, 6, 22, "Print",ExpressionUUID->"510ca4ff-389f-42b0-bb94-3b3782ec1815"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

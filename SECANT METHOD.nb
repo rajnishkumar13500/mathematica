@@ -1,0 +1,169 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5735,        161]
+NotebookOptionsPosition[      4941,        140]
+NotebookOutlinePosition[      5379,        157]
+CellTagsIndexPosition[      5336,        154]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.860570024308051*^9, 
+  3.86057004951505*^9}},ExpressionUUID->"90f8eab8-132f-4cd1-ad30-\
+cfef17c168e3"],
+
+Cell[TextData[StyleBox["SECANT METHOD", "Subtitle",
+ FontSize->48,
+ FontWeight->Bold,
+ FontVariations->{"Underline"->True},
+ FontColor->RGBColor[0.6, 0.4, 0.2]]], "Text",
+ CellChangeTimes->{{3.8605700582775645`*^9, 3.8605700641637373`*^9}, {
+  3.8605701787250733`*^9, 
+  3.860570180956628*^9}},ExpressionUUID->"c8a690e3-01c5-42d3-876e-\
+883ec0de7060"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "Question", " ", "2.", " ", "Perform", " ", "5", " ", "iterations", " ", 
+     "using", " ", "Secant", " ", "method", " ", "to", " ", "find", " ", 
+     "the", " ", "root", " ", "of", " ", "the", " ", "equation", " ", 
+     RowBox[{"x", "^", "5"}]}], "-", 
+    RowBox[{"8", "x"}], "+", "8"}], "=", "0."}], "Text",
+  FontSize->24,
+  FontColor->RGBColor[
+   0.08235294117647059, 0.0784313725490196, 0.0784313725490196]]], "Input",
+ CellChangeTimes->{3.8605700952595224`*^9, 
+  3.86057019349673*^9},ExpressionUUID->"e2123e66-406f-409a-a2e9-a2a4ea7cbe79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"x", " ", "^", "5"}], " ", "-", " ", 
+   RowBox[{"8", " ", "*", " ", "x"}], " ", "+", " ", "8"}]}], "\n", 
+ RowBox[{
+  RowBox[{"x0", " ", "=", " ", "0"}], ";", 
+  RowBox[{"x1", " ", "=", " ", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", " ", "=", " ", "5"}], ";", " ", 
+  RowBox[{"list", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+    RowBox[{"i", " ", "\[LessEqual]", " ", "n"}], ",", " ", 
+    RowBox[{"i", "++"}], ",", " ", 
+    RowBox[{
+     RowBox[{"x2", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"x0", " ", "*", " ", 
+          RowBox[{"f", "[", "x1", "]"}]}], " ", "-", " ", 
+         RowBox[{"x1", " ", "*", " ", 
+          RowBox[{"f", "[", "x0", "]"}]}]}], ")"}], " ", "/", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", "[", "x1", "]"}], " ", "-", " ", 
+         RowBox[{"f", "[", "x0", "]"}]}], ")"}]}]}], ";", "\n", 
+     RowBox[{"list", " ", "=", " ", 
+      RowBox[{"Append", "[", 
+       RowBox[{"list", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "i", ",", " ", "x0", ",", " ", "x1", ",", " ", "x2", ",", " ", 
+          RowBox[{"f", "[", "x2", "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+     RowBox[{"x0", " ", "=", " ", "x2"}]}]}], "]"}], ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"TableForm", "[", 
+   RowBox[{
+    RowBox[{"N", "[", "list", "]"}], ",", " ", "\n", 
+    RowBox[{"TableHeadings", " ", "\[RightArrow]", " ", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<No. Of Iterations \>\"", ",", " ", "\"\<x0\>\"", ",", " ", 
+         "\"\<x1\>\"", ",", " ", "\"\<Approxiate Root\>\"", ",", " ", 
+         "\"\<f[x2]\>\""}], "}"}]}], "}"}]}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{3.8605702087350297`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1.`", "0.`", "1.`", "1.1428571428571428`", "0.8068066876896531`"},
+    {"2.`", "1.1428571428571428`", "1.`", "1.7394518016630736`", 
+     "10.00874595428623`"},
+    {"3.`", "1.7394518016630736`", "1.`", "0.9179184533102243`", 
+     "1.308311532774194`"},
+    {"4.`", "0.9179184533102243`", "1.`", "1.2662292453065385`", 
+     "1.1252462846758378`"},
+    {"5.`", "1.2662292453065385`", "1.`", 
+     RowBox[{"-", "1.1256458504585025`"}], "15.197955752675982`"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, 
+    RightArrow[
+    TableHeadings, {
+     None, {"No. Of Iterations ", "x0", "x1", "Approxiate Root", 
+       "f[x2]"}}]]]]], "Print",
+ CellChangeTimes->{3.8605701225271263`*^9, 3.860570210353152*^9},
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"de726b11-a9c0-4111-9428-d18f9b827ee7"]
+}, Open  ]]
+},
+WindowSize->{760, 730},
+WindowMargins->{{412, Automatic}, {26, Automatic}},
+TaggingRules->{"TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a4886beb-17da-4d1a-bfa0-98979362ddab"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 151, 3, 28, "Input",ExpressionUUID->"90f8eab8-132f-4cd1-ad30-cfef17c168e3"],
+Cell[712, 25, 351, 8, 75, "Text",ExpressionUUID->"c8a690e3-01c5-42d3-876e-883ec0de7060"],
+Cell[1066, 35, 616, 14, 79, "Input",ExpressionUUID->"e2123e66-406f-409a-a2e9-a2a4ea7cbe79"],
+Cell[CellGroupData[{
+Cell[1707, 53, 2056, 53, 162, "Input",ExpressionUUID->"0b61b93d-b882-4d98-8213-f4b40390e687"],
+Cell[3766, 108, 1159, 29, 80, "Print",ExpressionUUID->"de726b11-a9c0-4111-9428-d18f9b827ee7"]
+}, Open  ]]
+}
+]
+*)
+
